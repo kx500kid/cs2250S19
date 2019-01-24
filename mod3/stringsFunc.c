@@ -36,7 +36,9 @@ int main()
     scanf("%s", last);
 
     printf("Your first and last name are: %s %s\n", first, last);
-    strcpy(fullName, first);
+    strcpy(fullName, first); // fullName = first
+    strcat(fullName, " ");   // fullName = fullName + " "
+    strcat(fullName, last);  // fullName = fullName + last
     
     printf("Your full name is : %s\n", fullName);
 

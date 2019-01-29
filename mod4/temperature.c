@@ -1,14 +1,14 @@
 /*
  * =====================================================================================
  *
- *       Filename:  float.c
+ *       Filename:  temperature.c
  *
- *    Description:  Play with float points.
+ *    Description:  Creat program to play with temperature.
  *
  *        Version:  1.0
  *        Created:  01/15/2019 09:26:44 AM
  *       Revision:  none
- *       Compiler:  gcc float.c -o float
+ *       Compiler:  gcc temperature.c -o temperature
  *
  *         Author:  Morgan Sorensen (), morgansorensen@mail.weber.edu
  *   Organization:  WSU
@@ -24,19 +24,38 @@
 // Main Function
 int main()
 {
-    float temp = 7.9; // Celsius
-    double f_temp = 0;
-    // For floats use the %f placeholder
-    // For doubles use the %lf placeholder
+    int choice;
+    double in_temp;
+    double out_temp;
+
+    // 1) Ask user which temperature mode they want to use
+    printf("Welcome to the temperature calculator\n");
+    printf("Please enter your choice: \n");
+    printf("\t0 for Celcisus or 1 for Farenheit:\n");
+    scanf("%d", &choice);
+
+    //  2) Based on choice, calculate Celisus or Fahrenhiet
+    if (choice == 1)
+    {
+        printf("Enter the temperature in Celsius: ");
+        scanf("%lf", &in_temp);
     
-    printf("The temperature is %f Celsius\n", temp);
-    printf("What is the temperature in Ogden now in Celsius: ");
-    // use %f to capture float information
-    // use %lf to capture double informtion
-    scanf("%f", &temp);
-    //convert from Celsius to Fahrenheit
-    f_temp = (temp * 9/5) + 32;
-    printf("I see, your temp is %lf in Fahrenheit.\n", f_temp);
+        out_temp = (in_temp * 9.0/5) + 32;
+    }
+    else if (choice == 1)
+    {
+        printf("Enter the temperature in Fahrenheit: ");
+        scanf("%lf", &in_temp);
+
+        out_temp = (in_temp - 32) * 5.0/9.0;
+    }
+    else 
+    {
+        printf("Sorry, you did not enter 0 or 1");
+    }
+
+
+
 
             
     return 0;

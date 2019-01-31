@@ -31,26 +31,20 @@
 #define NOVEMBER     11
 #define DECEMBER     12
 
-
-
-
-
-
-
-
-
-
 // Function Prototypes
 
 // Main Function
 int main()
 {
     // 1) Capture user input
-    int month;
+    int month, day;
+    char answer;
+    while (1)
+    {
     printf("Please enter a month: 1 for January, 2 for Feb, etc: ");
     scanf("%d", &month);
     printf("\nPlease enter the day: ");
-    scanf("%d"), &day);
+    scanf("%d", &day);
 
     // 2) Use IF to validate month
     if(month > 12 || month < 1)
@@ -75,8 +69,8 @@ int main()
                 return 1;
             }
             break;
-        
-        // Months with 30 days
+
+            // Months with 30 days
         case APRIL:
         case JUNE:
         case SEPTEMBER:
@@ -91,23 +85,15 @@ int main()
             if(day > 28 || day < 1)
             {
                 printf("Invalid day\n");
+            }
+
+        printf("\n\nDo you want to continue [y|n]: ");
+        scanf(" %c", &answer);
+        if(answer != 'y' && answer != 'Y')
+        {
+            break; // exit loop
         }
-      
-      
-      
-      
-      
-      
-      
-      
-
-
-
-
-
-
-
-
+    } // end of while loop
     return 0;
 }
 // Function Definitions

@@ -18,6 +18,27 @@
 #include <stdio.h>
 
 // Constants
+#define JANUARY       1
+#define FEBRUARY      2
+#define MARCH         3
+#define APRIL         4
+#define MAY           5
+#define JUNE          6
+#define JULY          7
+#define AUGUST        8
+#define SEPTEMBER     9
+#define OCTOBER      10
+#define NOVEMBER     11
+#define DECEMBER     12
+
+
+
+
+
+
+
+
+
 
 // Function Prototypes
 
@@ -41,14 +62,14 @@ int main()
     switch (month)
     {
         // Months with 31 days
-        case 1:
-        case 3 :
-        case 5:
-        case 7:
-        case 8:
-        case 10:
-        case 12:
-            if (day > 31 || day < 1)
+        case JANUARY:
+        case MARCH:
+        case MAY:
+        case JULY:
+        case AUGUST:
+        case OCTOBER:
+        case DECEMBER:
+            if(day > 30 || day < 1)
             {
                 printf("Invalid day\n");
                 return 1;
@@ -56,17 +77,21 @@ int main()
             break;
         
         // Months with 30 days
-        case 4
-        case 6
-        case 9
-        case 11
-            if (day > 28 || day <j 1)
+        case APRIL:
+        case JUNE:
+        case SEPTEMBER:
+        case NOVEMBER:
+            if (day > 28 || day < 1)
             {
                 printf("Invalid day\n");
                 return 1;
             }
             break;
-    }
+        case FEBRUART:
+            if(day > 28 || day < 1)
+            {
+                printf("Invalid day\n");
+        }
       
       
       

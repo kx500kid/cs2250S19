@@ -9,7 +9,7 @@
  *        Version:  1.0
  *        Created:  01/31/2019 08:41:25 AM
  *       Revision:  none
- *       Compiler:  gcc
+ *       Compiler:  gcc angle2.c -o angle2.out -lm
  *
  *         Author:  Morgan Sorensen (), morgansorensen@mail.weber.edu
  *   Organization:  WSU
@@ -17,6 +17,7 @@
  * =====================================================================================
  */
 #include <stdio.h>
+#include <math.h>
 
 // Constants
 
@@ -28,15 +29,26 @@ int main()
     printf("Please enter an angle: ");
     scanf("%d", &angle);
 
+    if(angle < 0)
+    {
+        angle = fabs( 360 + angle);
+    }
+
+    // Check for angles > 360
+    angle = angle % 360;
+
     if (angle > 0 && angle < 90) // Quadrant I
     {
         printf("\nThe angle is in quadrant I\n");
     }
     else if (angle > 90 && angle < 180) // Quadrant II
     {
-        printf("\nThe angele is in quadrant II\n"); 
+        printf("\nThe angle is in quadrant II\n"); 
     }
-    else if (angle > 180 && angle < 270)
+    else if (angle > 180 && angle < 270) // Quadrant III
+    {
+        printf("\nThe angle is in quadrand III\n");
+    }
     else
     { 
         printf("\nIncorrect angle\n);

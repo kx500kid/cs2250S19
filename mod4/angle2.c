@@ -17,7 +17,8 @@
  * =====================================================================================
  */
 #include <stdio.h>
-#include <math.h>
+#include <stdlib.h>     // for regular abs()
+#include <math.h>       // for fabs()
 
 // Constants
 

@@ -35,8 +35,8 @@
 int main()
 {
     int choice;
-    double in_temp;
-    double out_temp;
+    double in_temp, out_temp;
+    int is_boil = 0, is_liquid = 0, is ice = 0;
 
     // 1) Ask user which temperature mode they want to use
     printf("Welcome to the temperature calculator\n");
@@ -69,14 +69,27 @@ int main()
     if(choice == CELSIUS)
     {
         if(out_temp >= BOIL_CEL)
-            printf("Your water is boiling\n");
-    }
+        {  printf("Your water is boiling\n");
+        }
+        else if (int_temp > FREEZE_CEL && in_temp < BOIL_CEL)
+        {
+            printf("Your water is liquid/n");
+        else
+        { printf("Your water is liquid\n");
+        }
     else // FAHRENHEIT
 
     if(out_temp >= Boil_FAHR);
     {
         printf("Your water is boiling\n");
-    }
+        if(out_temp >= BOIL_FAHR)
+        {  printf("Your water is boiling\n");
+        }
+        else if (int_temp > FREEZE_FAHR && in_temp < BOIL_CEL)
+        {
+            printf("Your water is liquid/n");
+        else
+        { printf("Your water is liquid\n");
     
 
 

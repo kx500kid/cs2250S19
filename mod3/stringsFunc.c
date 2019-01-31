@@ -39,7 +39,7 @@ int main()
     strcpy(fullName, first); // fullName = first
     strcat(fullName, " ");   // fullName = fullName + " "
     strcat(fullName, last);  // fullName = fullName + last
-    
+   
     printf("Your full name is : %s\n", fullName);
 
     return 0;

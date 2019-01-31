@@ -4,7 +4,15 @@
  *       Filename:  angle2.c
  *
  *    Description:  Calculate the quadrant based on input angle
- *                  Quadrant I:
+ *                  Quadrant I: angle between 0 and 90
+ *                  Quadrant II: angle between 90 and 180
+ *                  Quadrant III: angle betwee 180 and 270
+ *                  Quadrant IV: angle between 270 and 360
+ *                  If angle is 0, then print positive X axis
+ *                  If angle is 90, then print positive X axis
+ *                  If angle is 180, then print positive X axis
+ *                  If angle is 270, then print positive X axis
+ *
  *
  *        Version:  1.0
  *        Created:  01/31/2019 08:41:25 AM
@@ -26,7 +34,8 @@
 
 // Main Function
 int main()
-{ int angle;
+{
+    int angle;
     printf("Please enter an angle: ");
     scanf("%d", &angle);
 
@@ -50,6 +59,25 @@ int main()
     {
         printf("\nThe angle is in quadrand III\n");
     }
+
+    else if (angle == 0 || angle == 90 
+            || angle == 180 || angle == 270) // For angles on axis
+    {
+        switch (angle)
+            {
+                case 0:
+                    printf("The angle is on the positive X axis\n);
+                    break;
+                case 90:
+                    printf("The angle is on the positive Y axis\n);
+                    break;
+                case 180:
+                    printf("The angle is on the negative X  axis\n);
+                    break;
+                case 270:
+                    printf("The angle is on the negative Y  axis\n);
+                    break;
+            }
     else
     { 
         printf("\nIncorrect angle\n);

@@ -18,7 +18,8 @@
 #include <stdio.h>
 
 // Constants
-#define MAXCOUNT 4
+#define MINCOUNT 2
+#define MAXCOUNT 5
 
 // Function Prototypes
 
@@ -27,18 +28,34 @@ int main()
 {
     // 1) Calculate the average of user input values
     // 2) Validate user input for 0 to 100 only
+    // 3) Ask user how many values they need to enter
+    
+
     int count = 0;
     float grade, avg;
     float total = 0;
+    int student_count = 0;
+    
+    
+    printf("How many hw values you want to enter (between %d and %d)?",
+            MINCOUNT, MAXCOUNT);
+    scanf("%d", &student_count);
+
+
     while(count < MAXCOUNT)
     {
-        printf("Enter %d a hw grade(0-100): ", count);
+        printf("\nEnter %d a hw grade(0-100): ", count);
         scanf("%f", &grade);
         if (grade < 0 || grade > 100)
         {
             printf("Invalid input. Pleas try again\n");
             continue;   // invalid input. Continue takes to the top of the loop
+        }
         total += grade; // add up grades
+        if(count == student_count)
+        {
+            break; // reach teh student_count
+        }
 
 
         count++; // update test condition: sentinel
@@ -48,7 +65,5 @@ int main()
     printf("Bye amigo\n");
     
     return 0;
-}
+    }
 // Function Definitions
-
-
